@@ -4,7 +4,7 @@ This was a CTF organized by the awesome folks over at [RTN](https://rtn-team.cc)
 
 ## Flag format
 
-> ```RTN{...}```
+`RTN{...}`
 
 ## Categories
 
