@@ -1,27 +1,14 @@
 # ssssecret
 
-> I want to share a secret,
-> A secret dear to me.
-> But the secret to keeping a secret
-> Is to never give out the key.
+> I want to share a secret,<br>A secret dear to me.<br>But the secret to keeping a secret<br>Is to never give out the key.
 >  
-> So I broke it up in little pieces
-> As small as they can be.
-> Then after that you wouldn't expect
-> I handed them out for free.
+> So I broke it up in little pieces<br>As small as they can be.<br>Then after that you wouldn't expect<br>I handed them out for free.
 >  
-> Follow up these pieces
-> Understand them to a degree
-> At the very root of it all
-> The answer you will see
+> Follow up these pieces<br>Understand them to a degree<br>At the very root of it all<br>The answer you will see
 >  
 > AES-ECB('6eeb7683e9242ed56080e847c2f94cfc50634c29a3a50f14b31e7e3f97e34df0', key)
 >  
-> (1, d8877abe8c795a869b1fe28ed9a328a4)
-> (2, 1a1c134fc5c474899ee9d573b8895388)
-> (3, da143ab7a656e69a91b22414de846d0e)
-> (4, e4c6d40f50bd5f37d5c2f5e356a0af94)
-> (5, f344401d9a20a8ea1f08598434bfbf8e)
+> (1, d8877abe8c795a869b1fe28ed9a328a4)<br>(2, 1a1c134fc5c474899ee9d573b8895388)<br>(3, da143ab7a656e69a91b22414de846d0e)<br>(4, e4c6d40f50bd5f37d5c2f5e356a0af94)<br>(5, f344401d9a20a8ea1f08598434bfbf8e)
 
 As soon as I saw this, I immediately recognized what this challenge was about; [Shamir's Secret Sharing Scheme](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing).
 
