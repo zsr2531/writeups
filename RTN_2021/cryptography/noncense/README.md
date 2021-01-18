@@ -32,8 +32,7 @@ A-ha! This isn't RSA, but ECDSA! That's why the tools complained... A quick goog
 
 Hold up, what is _**k**_ and _**d~A~**_?
 
-> _**d~A~**_: the private key (randomly selected)
-> _**k**_: a *cryptographically secure random* integer from *[1,n-1]*.
+> _**d~A~**_: the private key (randomly selected)<br>_**k**_: a *cryptographically secure random* integer from *[1,n-1]*.
 
 Straight from the Wikipedia page. So... what this tells us is that if we know _**k**_ we can recover the private key _**d~A~**_.
 
