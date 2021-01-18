@@ -28,13 +28,13 @@ Let's take a closer look at what type of keys these are! After some googling I f
 
 A-ha! This isn't RSA, but ECDSA! That's why the tools complained... A quick google search for `ECDSA` led me to its [Wikipedia page](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm). What stood out immediately is that there was a section named "Concerns" under "Security". Hmmm... seems promising, let's have a look.
 
-> In December 2010, a group calling itself fail0verflow announced recovery of the ECDSA private key used by Sony to sign software for the PlayStation 3 game console. However, this attack only worked because Sony did not properly implement the algorithm, because _**k**_ was static instead of random. As pointed out in the Signature generation algorithm section above, this makes _**d~A~**_ solvable, rendering the entire algorithm useless.
+> In December 2010, a group calling itself fail0verflow announced recovery of the ECDSA private key used by Sony to sign software for the PlayStation 3 game console. However, this attack only worked because Sony did not properly implement the algorithm, because _**k**_ was static instead of random. As pointed out in the Signature generation algorithm section above, this makes _**d<sub>A</sub>**_ solvable, rendering the entire algorithm useless.
 
-Hold up, what is _**k**_ and _**d~A~**_?
+Hold up, what is _**k**_ and _**d<sub>A</sub>**_?
 
-> _**d~A~**_: the private key (randomly selected)<br>_**k**_: a *cryptographically secure random* integer from *[1,n-1]*.
+> _**d<sub>A</sub>**_: the private key (randomly selected)<br>_**k**_: a *cryptographically secure random* integer from *[1,n-1]*.
 
-Straight from the Wikipedia page. So... what this tells us is that if we know _**k**_ we can recover the private key _**d~A~**_.
+Straight from the Wikipedia page. So... what this tells us is that if we know _**k**_ we can recover the private key _**d<sub>A</sub>**_.
 
 ## The solution
 
