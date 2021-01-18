@@ -8,3 +8,4 @@ There were 5 challenges in this category, ranging from simple (*or not so simple
 - [mixitup](mixitup/)
 - [ssssecret](ssssecret/)
 - [rehasher](rehasher/)
+- [noncense](noncense/)
