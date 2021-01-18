@@ -9,3 +9,4 @@ This was a CTF organized by the awesome folks over at [RTN](https://rtn-team.cc)
 ## Categories
 
 - [Cryptography](cryptography/)
+- [Reverse engineering](reverse_engineering/)
