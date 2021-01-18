@@ -24,11 +24,11 @@ There is *nothing* special about this. It is basically like `void`, except it ca
 
 ### Taste
 
-- `Taste<T>`: We can see that this class is used as the return value of `Safediv`, and for me that made it instantly clear that this is the `Maybe` monad. ![Safediv](safediv.png) But I assume not everyone got it this quickly, so I am going to explain further. About the two methods:
+- `Taste<T>`: We can see that this class is used as the return value of `Safediv`, and for me that made it instantly clear that this is the `Maybe` monad.<br>![Safediv](safediv.png)<br>But I assume not everyone got it this quickly, so I am going to explain further. About the two methods:
   - `Bind`: In layman's terms, this basically "transforms" `Taste<X>` into some other `Taste<Y>`, using a function that takes an `X` and returns `Y`.
   - `Map`: Same thing as `Bind`, but now the "transformer" function takes `X` and returns `Taste<Y>`.
-- `Bitter<T>`: Notice how this class is a singleton (private constructor and a public static property `Instance`). Meaning this class is essentially stateless. And whatever method is called on it (`Bind`/`Map`), you get the same instance back. ![bitter](bitter.png)
-- `Sweet<T>`: In contrast to `Bitter<T>`, this is ***not*** a singleton class, it just wraps a value of type `T`. Notice how the two methods (`Bind` and `Map`) actually do something now, instead of just returning the same instance. ![sweet](sweet.png)
+- `Bitter<T>`: Notice how this class is a singleton (private constructor and a public static property `Instance`). Meaning this class is essentially stateless. And whatever method is called on it (`Bind`/`Map`), you get the same instance back.<br>![bitter](bitter.png)
+- `Sweet<T>`: In contrast to `Bitter<T>`, this is ***not*** a singleton class, it just wraps a value of type `T`. Notice how the two methods (`Bind` and `Map`) actually do something now, instead of just returning the same instance.<br>![sweet](sweet.png)
 - `Taste`: This is a `static` class that provides a few helper methods, they are not really important, they just provide a few shortcuts.
 
 ### Spice
@@ -49,18 +49,18 @@ So let's break this down, shall we?
   - `Map`: Pretty much the same as `Map` from `Taste<T>`, except this will traverse the list and apply the function on every item.
   - `Bind`: Same story as with `Map`
   - `FoldM`: This is an interesting one; this is basically the same as `Aggregate` from Linq.
-- `Vanilla<T>`: This is basically an empty list. How can we tell? Well... if we take a look, this is also a singleton class (private constructor and a public static property `Instance`). ![empty list](emptylist.png)
-- `Cocoa<T>`: This is the "main component", this is where the heads and tails come together. ![heads and tails](headandtail.png)
+- `Vanilla<T>`: This is basically an empty list. How can we tell? Well... if we take a look, this is also a singleton class (private constructor and a public static property `Instance`).<br>![empty list](emptylist.png)
+- `Cocoa<T>`: This is the "main component", this is where the heads and tails come together.<br>![heads and tails](headandtail.png)
 - `Spice`: Some helper methods, they aren't really important.
 
 ### Fruit
 
 This is a bit more complex, represents expressions. There are 5 types in this namespace, so let's break it down;
 
-- `Fruit<T>`: This is an `abstract` class which just defines an `Evaluate` method which takes in a list of "variables" in the form of a `(name, value)` tuple. ![fruit](evaluate.png)
-- `Apple<T>`: Just wraps a value of type `T`, think of it like a "literal" in the expression tree. ![literal](leaf.png)
-- `Banana<T>`: This is the variable expression in the expression tree. We can deduce this by looking at its `Evaluate` method implementation. ![variable](variable.png) It loops over the list of variables in the evaluator and tries to find the value associated with the `Name`.
-- `StrawBerry<T>`: Last, but definitely not least, we have this bad boi. This is nothing else, but a function call expression! We can see it by just inspecting the names. ![function call model](function1.png) And then looking at the `Evaluate` method, we can see that it evaluates all of the `Argument`s and then calls the `Function`: ![actual call](function2.png)
+- `Fruit<T>`: This is an `abstract` class which just defines an `Evaluate` method which takes in a list of "variables" in the form of a `(name, value)` tuple.<br>![fruit](evaluate.png)
+- `Apple<T>`: Just wraps a value of type `T`, think of it like a "literal" in the expression tree.<br>![literal](leaf.png)
+- `Banana<T>`: This is the variable expression in the expression tree. We can deduce this by looking at its `Evaluate` method implementation.<br>![variable](variable.png)<br>It loops over the list of variables in the evaluator and tries to find the value associated with the `Name`.
+- `StrawBerry<T>`: Last, but definitely not least, we have this bad boi. This is nothing else, but a function call expression! We can see it by just inspecting the names.<br>![function call model](function1.png)<br>And then looking at the `Evaluate` method, we can see that it evaluates all of the `Argument`s and then calls the `Function`:<br>![actual call](function2.png)
 
 ## Whew, where were we?
 
