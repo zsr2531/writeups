@@ -49,7 +49,7 @@ python3 ecdsa-nonce_reuse-crack.py -files --pubkey vgtables.pub \
   
 Fantastic, it worked! Now let us run the bash script that was given to us! And we get the flag in a nice PDF to keep up with the theme: `RTN{h0W_mUcH_m0r3_n0nS3ns3_d0_Y0u_w4Nt}`.
 
-> Fun fact: Reading the PDFs from the challenge, you might notice these black bars that are used to censor some text. Well, you can actually recover the text behind them pretty easily! What's the name of the secret ingredient they are talking about in the PDFs? :eyes:
+> Fun fact: Reading the PDFs from the challenge, you might notice these black bars that are used to censor some text. Well, you can actually recover the text behind them pretty easily! What's the name of the secret ingredient they are talking about in the PDFs? 👀
 >
 > *This task is trivial, so it is left as an exercise for the reader.*
 
